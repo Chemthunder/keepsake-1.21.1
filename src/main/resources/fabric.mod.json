@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "keepsake",
+  "version": "${version}",
+  "name": "Keepsake",
+  "description": "Somewhat quintessential utilities for lore on the Memory Lapse server.",
+  "authors": [
+    "Chemthunder"
+  ],
+  "license": "ARR",
+  "icon": "assets/keepsake/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.peak.keepsake.core.Keepsake"
+    ],
+    "fabric-datagen": [
+      "com.peak.keepsake.datagen.KeepsakeDataGenerator"
+    ],
+    "cardinal-components": [
+      "com.peak.keepsake.cca.KeepsakeCCA"
+    ]
+  },
+  "mixins": [
+    "keepsake.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+
+  "custom": {
+    "cardinal-components": [
+      "keepsake:keepsake"
+    ]
+  }
+}
