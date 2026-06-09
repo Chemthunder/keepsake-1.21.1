@@ -1,7 +1,8 @@
 package com.peak.keepsake.core;
 
+import com.peak.keepsake.core.command.KeepsakeCommand;
 import net.fabricmc.api.ModInitializer;
-
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,8 @@ public class Keepsake implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public void onInitialize() {
+
+        CommandRegistrationCallback.EVENT.register(new KeepsakeCommand());
 
 		LOGGER.info("\"Keepsakes of a forgotten time...\"");
 	}

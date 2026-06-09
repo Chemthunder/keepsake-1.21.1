@@ -16,6 +16,7 @@ public class KeepsakeCommand implements CommandRegistrationCallback {
     public void register(CommandDispatcher<ServerCommandSource> dispatch, CommandRegistryAccess access, CommandManager.RegistrationEnvironment registrationEnvironment) {
         dispatch.register(literal("keepsake")
                 .then(literal("clearArrows").executes(context -> {
+                    context.getSource().getPlayerOrThrow().setStuckArrowCount(0);
                     return Command.SINGLE_SUCCESS;
                 }))
 
